@@ -17,39 +17,6 @@ The order shown here is the representation of when a computer receives a message
 When sending a message/data to another computer, the order of the layers will be inverted.
 
 ---
-
-## Sending message from an application to another computer's application.
-
-
-Let's say an application that's running on computer_1's would like to communicate with another application on computer_2. The initial flow of the message initiated by computer_1 are as follows:
-
-```
-    A[Application] --> B[Application layer]
-    B --> C[Presentation layer]
-    C --> D[Session layer]
-    D --> E[Transport layer]
-    E --> F[Network layer]
-    F --> G[Data Link layer]
-    G --> H[Physical layer]
-    H --> I[physical medium]
-```
-
-After the message has gone through many works to be processed and changed the format to comply with the lower layer in the model, the message will then be sent to computer_2 through a physical transmission medium.
-
-Once computer_2 receives the message, the message/data will then be transferred to the intended application. The flow is just as when computer_1 sends the message to computer_2, just that the flow order is inverted now.
-
-```mermaid
-    A[physical medium] --> B[Physical layer]
-    B --> C[Data Link layer]
-    C --> D[Network layer]
-    D --> E[Transport layer]
-    E --> F[Session layer]
-    F --> G[Presentation layer]
-    G --> H[Application layer]
-    H --> I[Application]
-```
-
----
 ## Describing the seven layers of the OSI model
 
 ### 1. Physical layer
@@ -214,3 +181,36 @@ This layer would also in charge of resource allocation, network transparency and
 - Network Virtual terminal
 > Software version of a physical terminal
 > allow the user to log onto a remote host
+
+
+---
+## Sending message from an application to another computer's application.
+
+Let's say an application that's running on computer_1's would like to communicate with another application on computer_2. The initial flow of the message initiated by computer_1 are as follows:
+
+```
+    A[Application] --> B[Application layer]
+    B --> C[Presentation layer]
+    C --> D[Session layer]
+    D --> E[Transport layer]
+    E --> F[Network layer]
+    F --> G[Data Link layer]
+    G --> H[Physical layer]
+    H --> I[physical medium]
+```
+
+Data from the application would be sent to the application layer of computer_1. Then, the data will be sent to the presentation layer so that the data could be translated, compressed and encrypted with the format computer_1 and 2 agreed on. Next, the data would then be passed to the session layer, which will then be passed to the transport layer. The data would be encapsulated with layer 4 header in the transport layer, which specifies the type of transport type for the data(TCP or UDP). After adding the header. The data will now be called a segment. The segment then will be sent to the layer 3, the Network layer, so that the layer 3 header could be added to the segment. However, before adding the header to the segments, the network layer would first break the segment down into packets. Layer 3 header consists of the destination's and the source's IP address. 
+
+After adding the header to the broken down segment and becoming packets, the packets will then be transferred to the data link layer, where the packets will be added with a trailer and header encapsulating the packets and becoming frames. The frames will then be converted into bits ad bytes, which then converted into an electrical signal to be sent through a medium. The message will then be sent to computer_2 through a physical transmission medium. Once computer_2 receives the message, the message/data will then be transferred to the intended application. The flow is just as when computer_1 sends the message to computer_2, just that the flow order is inverted now. Headers will be taken off, and data will be uncompressed, decrypted and many other steps, reversing what the model has done in computer_1 before the transmission.
+
+
+```mermaid
+    A[physical medium] --> B[Physical layer]
+    B --> C[Data Link layer]
+    C --> D[Network layer]
+    D --> E[Transport layer]
+    E --> F[Session layer]
+    F --> G[Presentation layer]
+    G --> H[Application layer]
+    H --> I[Application]
+```
