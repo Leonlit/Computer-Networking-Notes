@@ -21,7 +21,7 @@ The circuits in the cable is twisted to reduce the electromagnetic interference 
 
 ``` symbol
 -----|	    Outer Conductor   Dielecric core
-     |-----|  |               |          
+     |-----|  |             /          
      |     |----_____  _____ 
      |     |   |_____\//____----
      |     |   |_____//\____
@@ -120,7 +120,7 @@ There are two types of fibre-optic mode:
  Speed | Cable Type | IEEE Standards | Informal name | Max Length
  ---- | ---- | ---- | ---- | ----
 1 Gbps | Multimode / Single-Mode | 802.3z | 1000BASE-LX | 550M (MM), 5km (SM)
-10 Gbps | Multimode | Fast Ethernet | 802.3ae | 10GBASE-SR | 400m
+10 Gbps | Multimode | 802.3ae | 10GBASE-SR | 400m
 10 Gbps | Single-Mode | 802.3ae | 10GBASE-LR | 10km
 10 Gbps | Single-Mode| 802.3ae | 10GBASE-ER | 30km
 
