@@ -26,8 +26,8 @@ The circuits in the cable is twisted to reduce the electromagnetic interference 
      |     |   |_____\//____----
      |     |   |_____//\____
      |     |   |_____/\_____----
-	 |     |----              |
-	 |-----|		Inner Conductor
+     |     |----              |
+     |-----|		Inner Conductor
 -----|	  \
 Cable     Barrier Tape
 Jacket	
@@ -61,7 +61,7 @@ Straight-through cables are cables with wires that connects two devices from one
 - transmit data at pin 1 & 2
 
 
-If two same device needs to be connected through ethernet cable (router with another router, or a switch with another switch), another cable is needed to connect them both. It is called cross-[over cables. 
+If two same device needs to be connected through ethernet cable (router with another router, or a switch with another switch), another cable is needed to connect them both. It is called cross-over cables. 
 
 This type of cable is different from straight-through cable where the wire that connects from 1 & 2 are crossed and connects to the 3 and 6 pin at the other end of the cable. While pin 3 & 6 will be crossed and connected to the 1 & 2 pins at the other end.
 
@@ -90,9 +90,9 @@ The structure of an fiber-optic cable is as below:
 -----|       Cladding
      |-----|  |
      |     |----______
-	 |     |   |______
-	 |     |----   |
-	 |-----|     Fiberglass core
+     |     |   |______
+     |     |----   |
+     |-----|     Fiberglass core
 -----|	  \
 Outer     Protective Buffer
 Jacket	
